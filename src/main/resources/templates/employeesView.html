@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Employees View Template</h1>
+<div th:each="employee: ${employeesModel}">
+    <p th:text=" 'First Name: ' + ${employee.firstName}"></p>
+    <p th:text=" 'Last Name: ' + ${employee.lastName}"></p>
+    <p th:text=" 'Street: ' + ${employee.address.street}"></p>
+    <p th:text=" 'City: ' + ${employee.address.city}"></p>
+    <p th:text=" 'County: ' + ${employee.address.county}"></p>
+    <p th:text=" 'State: ' + ${employee.address.state}"></p>
+    <br>
+</div>
+<br>
+<form action="/employees" method="POST">
+    <h2>Enter your Info</h2>
+    <input type="text" name="firstName" placeholder="First Name">
+    <input type="text" name="lastName" placeholder="Last Name">
+    <input type="text" name="street" placeholder="Street">
+    <input type="text" name="city" placeholder="City">
+    <input type="text" name="county" placeholder="County">
+    <input type="text" name="state" placeholder="State">
+    <button type="submit">Add Employee</button>
+</form>
+</body>
+</html>
